@@ -1,6 +1,7 @@
-/*<script>
+import Vimeo from '@vimeo/player';
     const iframe = document.querySelector('iframe');
-    const player = new Vimeo.Player(iframe);
+const player = new Vimeo(iframe);
+    
 
     player.on('play', function() {
         console.log('played the video!');
@@ -9,16 +10,24 @@
     player.getVideoTitle().then(function(title) {
         console.log('title:', title);
     });
-</script>
 
-const onPlay = function(data) {
-    // data is an object containing properties specific to that event
+
+player.on('currentTime', function() {
+    duration: 61.857
+    percent: 0.049
+    seconds: 3.034
+});
+var callback = function () {
+    duration: 61.857
+    percent: 0.049
+    seconds: 3.034
 };
 
-player.on('play', onPlay);
+player.off('currentTime', callback);
 
 
-player.setCurrentTime(30.456).then(function(seconds) {
+const videoplayer - current - time;
+player.setCurrentTime(videoplayer - current - time value).then(function(seconds) {
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
     switch (error.name) {
@@ -30,4 +39,4 @@ player.setCurrentTime(30.456).then(function(seconds) {
             // some other error occurred
             break;
     }
-});*/
+});
