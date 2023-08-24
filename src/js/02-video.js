@@ -12,22 +12,12 @@ const player = new Vimeo(iframe);
     });
 
 
-player.on('currentTime', function() {
-    duration: 61.857
-    percent: 0.049
-    seconds: 3.034
+player.on('timeupdate', function(data) {
+     console.log("The currentTime attribute has been updated. Again.");
 });
-var callback = function () {
-    duration: 61.857
-    percent: 0.049
-    seconds: 3.034
-};
 
-player.off('currentTime', callback);
-
-
-const videoplayer - current - time;
-player.setCurrentTime(videoplayer - current - time value).then(function(seconds) {
+localStorage.setItem('CurrentTime', JSON.stringify(timeupdate))
+player.setCurrentTime(CurrentTime).then(function(seconds) {
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
     switch (error.name) {
