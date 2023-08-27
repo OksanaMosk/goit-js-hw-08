@@ -15,6 +15,12 @@ allForms.form.addEventListener('input', throttle(onClear, 500));
 allForms.form.addEventListener('submit', evt => {
   evt.preventDefault();
   localStorage.removeItem('feedback-form-state');
+  formData.email = allForms.emailEl.value;
+  formData.message = allForms.messageEl.value;
+
+  if (allForms.messageEl.value === '') {
+    return alert('Please fill in all the fields!');
+  }
   evt.currentTarget.reset();
   console.log(formData);
 });
